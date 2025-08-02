@@ -1,0 +1,58 @@
+@use '../base/variables' as variables;
+
+.header {
+  background-color: variables.$secondary-color;
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 0;
+  font-family: variables.$font-main;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &__navbar {
+    max-width: 75rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+
+  &__link {
+    text-decoration: none;
+    color: variables.$text-color;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    transition: color variables.$transition;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: variables.$accent-color;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform variables.$transition;
+      border-radius: 0.25rem;
+    }
+
+    &:hover,
+    &:focus {
+      color: variables.$accent-color;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

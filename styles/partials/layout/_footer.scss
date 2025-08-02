@@ -1,0 +1,46 @@
+@use '../base/variables' as variables;
+
+.footer {
+  background-color: variables.$secondary-color;
+  color: variables.$text-color;
+  padding: 2rem 1rem;
+  text-align: center;
+  
+  &__navbar {
+    max-width: 75rem;
+    margin: 0 auto 1rem auto;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    transition: color variables.$transition, transform variables.$transition;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
+      outline: none;
+    }
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+  }
+
+}
+
+@media (min-width: 48rem) {
+  .footer__menu {
+    gap: 3rem;
+  }
+}
